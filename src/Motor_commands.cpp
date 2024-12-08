@@ -4,7 +4,7 @@
 #include "Motor_commands.h"
 #include "Delay_nb.h"
 
-#define JOYSTICK_UPDATE_DELAY 300
+#define JOYSTICK_UPDATE_DELAY 500
 
 /**
  * @brief            Sends a message to slave depending on joystick movement
@@ -24,15 +24,19 @@ void handle_joystick(int joystick_x, int joystick_y)
 
     tMovement command;
 
+    if ( ( x_value > 350 ) && ( x_value < 700 ) && ( y_value > 800 ) )      // forward
     {
         command = MOVEMENT_FORWARD;
     }
+    else if ( ( x_value > 350 ) && ( x_value < 700 ) && ( y_value < 200 ) ) // backward
     {
         command = MOVEMENT_BACKWARD;
     }
+    else if ( ( x_value < 200 ) && ( y_value > 350 ) && ( y_value < 700 ) ) // right
     {
         command = MOVEMENT_RIGHT;
     }
+    else if ( ( x_value > 800 ) && ( y_value > 350 ) && ( y_value < 700 ) ) // left
     {
         command = MOVEMENT_LEFT;
     }
