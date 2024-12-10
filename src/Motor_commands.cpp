@@ -16,6 +16,7 @@
  * @param joystick_x Joystick direction along x axis
  * @param joystick_y Joystick direction along y axis
  */
+void handle_joystick( int joystick_x, int joystick_y )
 {
     if( !delay_nb( JOYSTICK_UPDATE_DELAY ) ) 
     {
@@ -49,5 +50,6 @@
     }
 
     LoRa.beginPacket();
+    LoRa.write( ( uint8_t ) command );
     LoRa.endPacket();
 }
