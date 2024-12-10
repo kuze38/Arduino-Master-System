@@ -13,7 +13,6 @@
 #define LORA_RST   9
 #define LORA_DIO0  2
 
-void setup() 
 {
     pinMode( JOYSTICK_X, INPUT );
     pinMode( JOYSTICK_Y, INPUT );
@@ -33,5 +32,4 @@ void setup()
 
 void loop() 
 {
-    handle_joystick( JOYSTICK_X, JOYSTICK_Y);
 }
