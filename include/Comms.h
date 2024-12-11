@@ -5,7 +5,8 @@ typedef enum {
     MOVEMENT_FORWARD = 0x2,
     MOVEMENT_BACKWARD = 0x3,
     MOVEMENT_RIGHT = 0x4,
-    MOVEMENT_LEFT = 0x5
+    MOVEMENT_LEFT = 0x5,
+    MOVEMENT_STOP = 0x6
 } tMovement;
 
 typedef enum {
