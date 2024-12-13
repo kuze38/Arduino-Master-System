@@ -46,7 +46,7 @@ void handle_joystick( int joystick_x, int joystick_y )
     }
     else if ( ( x_value > LOWER_MEDIAN ) && ( x_value < HIGHER_MEDIAN ) && ( y_value > LOWER_MEDIAN ) && ( y_value < HIGHER_MEDIAN ) ) // stop
     {
-
+        command = MOVEMENT_STOP;
     }
     else
     {
