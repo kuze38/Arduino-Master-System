@@ -56,4 +56,5 @@ void handle_joystick( int joystick_x, int joystick_y )
     LoRa.beginPacket();
     LoRa.write( ( uint8_t ) command );
     LoRa.endPacket();
+    Serial.println( command ); // Show command on serial monitor
 }
