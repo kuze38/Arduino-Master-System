@@ -5,10 +5,11 @@
 #include "Delay_nb.h"
 
 #define JOYSTICK_UPDATE_DELAY  500
-#define LOWER_MEDIAN           350 // lower limit for constraining movement
-#define HIGHER_MEDIAN          700 // higher limit for constraining movement
-#define FIRST_DIRECTION        800 // for going forward or left
-#define SECOND_DIRECTION       200 // for going backward or right
+#define LOWER_MEDIAN           350  // lower limit for constraining movement
+#define HIGHER_MEDIAN          700  // higher limit for constraining movement
+#define FIRST_DIRECTION        800  // for going forward or left
+#define SECOND_DIRECTION       200  // for going backward or right
+#define LORA_ID                0x10 // LoRa ID to ensure commands sent come from Arduino 
 
 /**
  * @brief            Sends a message to slave depending on joystick movement
@@ -54,6 +55,7 @@ void handle_joystick( int joystick_x, int joystick_y )
     }
 
     LoRa.beginPacket();
+    LoRa.write( ( uint8_t ) LORA_ID );
     LoRa.write( ( uint8_t ) command );
     LoRa.endPacket();
     Serial.println( command ); // Show command on serial monitor
